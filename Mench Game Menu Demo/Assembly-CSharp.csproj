@@ -57,11 +57,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Save and Retrieve\SaveData.cs" />
-    <Compile Include="Assets\Scripts\Save and Retrieve\SaveSystem.cs" />
-    <Compile Include="Assets\Scripts\Save and Retrieve\SimpleJson.cs" />
-    <Compile Include="Assets\Scripts\UI\Menu\GameMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\Menu\MenuPanelManager.cs" />
+    <Compile Include="Assets\Programms\Custome Classes\GameSetting.cs" />
+    <Compile Include="Assets\Programms\Custome Classes\Save and Retrieve\SaveData.cs" />
+    <Compile Include="Assets\Programms\Custome Classes\Save and Retrieve\SaveSystem.cs" />
+    <Compile Include="Assets\Programms\Custome Classes\Save and Retrieve\SimpleJson.cs" />
+    <Compile Include="Assets\Programms\Scripts\UI\Menu\GameMenu.cs" />
+    <Compile Include="Assets\Programms\Scripts\UI\Menu\GameOptionsManager.cs" />
+    <Compile Include="Assets\Programms\Scripts\UI\Menu\MenuPanelManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Work/Company/TetraPuzzleDocuments/Mench game/Game Project/Mench Game Menu Demo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

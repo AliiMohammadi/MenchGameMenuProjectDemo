@@ -8,11 +8,12 @@ namespace Menu
     public class GameMenu : MonoBehaviour
     {
         [HideInInspector]
-        public GameMenu Gamemenu;
+        public static GameMenu Gamemenu;
 
         public enum GameWindwos
         {
-            Main,Setting,Profile,Chats
+            Main,Setting,Profile,Chats,LeaderBoard,OfflineLobby,OnlineLobby 
+             ,CashShop,DiecShop,LogoShop
         }
         /// <summary>
         /// پنجره درحال تمرکز 
@@ -27,13 +28,20 @@ namespace Menu
         public void LoadScene(string scenename)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(scenename);
+            Debug.Log("Scene " + scenename + " loaded.");
         }
+        public void LoadScene(int sceneindex)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneindex);
+            Debug.Log("Scene " + sceneindex + "(Index scene) loaded.");
+        }
+
         /// <summary>
         /// خروج از بازی
         /// </summary>
         public void ExitApplication()
         {
-            Debug.Log("Application quit. at: " + System.DateTime.Now);
+            Debug.Log("Application quit.");
             Application.Quit();
         }
     }

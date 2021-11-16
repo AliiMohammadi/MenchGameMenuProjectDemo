@@ -1,0 +1,2 @@
+D:\Work\Company\TetraPuzzleDocuments\Mench game\Game Project\Mench Game Menu Demo\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Work\Company\TetraPuzzleDocuments\Mench game\Game Project\Mench Game Menu Demo\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

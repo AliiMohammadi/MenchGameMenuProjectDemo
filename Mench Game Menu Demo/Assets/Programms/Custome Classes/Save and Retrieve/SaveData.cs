@@ -34,7 +34,7 @@ namespace SaveAndRetrieve
             /// <summary>
             /// میزان صدای کل بازی
             /// </summary>
-            public static float GameSoundVolume
+            public static float GameMusicVolume
             {
                 set
                 {
@@ -46,31 +46,17 @@ namespace SaveAndRetrieve
                 }
             }
             /// <summary>
-            /// ایا موسیقی بازی خاموش باشد؟
+            /// میزان صدای کل بازی
             /// </summary>
-            public static bool IsGameMusicOn
+            public static float GameSoundEffectsVolume
             {
                 set
                 {
-                    SetBool("IsGameMusicOn", value);
+                    SetFloat("GameSoundEffectsVolume", value);
                 }
                 get
                 {
-                    return GetBool("IsGameMusicOn", true);
-                }
-            }
-            /// <summary>
-            /// ایا صداهای بازی خاموش باشد؟
-            /// </summary>
-            public static bool IsGameSoundOn
-            {
-                set
-                {
-                    SetBool("IsGameSoundOn", value);
-                }
-                get
-                {
-                    return GetBool("IsGameSoundOn", true);
+                    return GetFloat("GameSoundEffectsVolume", 1);
                 }
             }
             /// <summary>
