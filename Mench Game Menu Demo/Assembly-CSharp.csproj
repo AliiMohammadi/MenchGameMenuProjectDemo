@@ -64,6 +64,8 @@
     <Compile Include="Assets\Programms\Scripts\UI\Menu\GameMenu.cs" />
     <Compile Include="Assets\Programms\Scripts\UI\Menu\GameOptionsManager.cs" />
     <Compile Include="Assets\Programms\Scripts\UI\Menu\MenuPanelManager.cs" />
+    <Compile Include="Assets\Programms\Scripts\UI\Menu\ScrollRectElite.cs" />
+    <Compile Include="Assets\Programms\Scripts\UI\Menu\SnapScroll.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Work/Company/TetraPuzzleDocuments/Mench game/Game Project/Mench Game Menu Demo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -14,6 +14,8 @@ namespace Menu
         [HideInInspector]
         public static MenuPanelManager MenuPanels;
 
+        public SnapScroll Snapscroll;
+
         [SerializeField]
         private GameObject MainPanel;
         [SerializeField]
@@ -33,6 +35,9 @@ namespace Menu
         private GameObject ShopDicePanel;
         [SerializeField]
         private GameObject ShopLogoPanel;
+
+        [SerializeField]
+        private GameObject LeaderBoardPanel;
 
 
         void Start()
@@ -58,7 +63,10 @@ namespace Menu
             OnlineLobbyPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
+            LeaderBoardPanel.SetActive(false);
             MainPanel.SetActive(true);
+
+            Snapscroll.MoveToContent(1);
 
             ChangeWindowState(GameMenu.GameWindwos.Main);
         }
@@ -75,6 +83,7 @@ namespace Menu
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
             MainPanel.SetActive(false);
+            LeaderBoardPanel.SetActive(false);
             ChangeWindowState(GameMenu.GameWindwos.Chats);
         }
         public void ShowProfilePanel()
@@ -85,6 +94,7 @@ namespace Menu
             OfflineLobbyPanel.SetActive(false);
             MainPanel.SetActive(false);
             ProfilePanel.SetActive(true);
+            LeaderBoardPanel.SetActive(false);
             ChangeWindowState(GameMenu.GameWindwos.Profile);
         }
         public void ShowOfflineLobbyPanel()
@@ -99,8 +109,25 @@ namespace Menu
         }
 
         // پنجره های مربوط به بخش فروشگاه
+        public void ShowShopPanel()
+        {
+            Snapscroll.MoveToContent(0);
+
+            SettingPanel.SetActive(false);
+            ChatsPanel.SetActive(false);
+            OnlineLobbyPanel.SetActive(false);
+            OfflineLobbyPanel.SetActive(false);
+            ProfilePanel.SetActive(false);
+
+            LeaderBoardPanel.SetActive(false);
+
+            ChangeWindowState(GameMenu.GameWindwos.CashShop);
+        }
+
         public void ShowCashPanel()
         {
+            Snapscroll.MoveToContent(0);
+
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
@@ -110,11 +137,14 @@ namespace Menu
             ShopCashPanel.SetActive(true);
             ShopDicePanel.SetActive(false);
             ShopLogoPanel.SetActive(false);
+            LeaderBoardPanel.SetActive(false);
 
             ChangeWindowState(GameMenu.GameWindwos.CashShop);
         }
         public void ShowDicePanel()
         {
+            Snapscroll.MoveToContent(0);
+
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
@@ -124,10 +154,13 @@ namespace Menu
             ShopCashPanel.SetActive(false);
             ShopDicePanel.SetActive(true);
             ShopLogoPanel.SetActive(false);
+            LeaderBoardPanel.SetActive(false);
             ChangeWindowState(GameMenu.GameWindwos.DiecShop);
         }
         public void ShowLogoPanel()
         {
+            Snapscroll.MoveToContent(0);
+
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
@@ -137,7 +170,27 @@ namespace Menu
             ShopCashPanel.SetActive(false);
             ShopDicePanel.SetActive(false);
             ShopLogoPanel.SetActive(true);
+            LeaderBoardPanel.SetActive(false);
             ChangeWindowState(GameMenu.GameWindwos.LogoShop);
+        }
+
+        //پنجره های مربوط به لیدر برد
+        public void ShowLeaderBoardPanel()
+        {
+            Snapscroll.MoveToContent(2);
+
+            SettingPanel.SetActive(false);
+            ChatsPanel.SetActive(false);
+            OnlineLobbyPanel.SetActive(false);
+            OfflineLobbyPanel.SetActive(false);
+            ProfilePanel.SetActive(false);
+
+            ShopCashPanel.SetActive(false);
+            ShopDicePanel.SetActive(false);
+            ShopLogoPanel.SetActive(true);
+            LeaderBoardPanel.SetActive(true);
+
+            ChangeWindowState(GameMenu.GameWindwos.LeaderBoard);
         }
     }
 }
