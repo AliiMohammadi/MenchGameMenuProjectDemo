@@ -11,6 +11,7 @@ namespace Menu
     /// </summary>
     public class ScrollRectElite : ScrollRect
     {
+        public bool HasScollParent = true;
         public ScrollRect parentScroll;
         public bool IsDragging;
         bool routeToParent;
@@ -31,21 +32,20 @@ namespace Menu
             else
                 base.OnBeginDrag(eventData);//اسکرول پنل
 
-            IsDragging = true;
         }
         public override void OnDrag(PointerEventData eventData)
         {
-
             if (routeToParent)
             {
                 parentScroll.OnDrag(eventData);//اسکرول اصلی
             }
             else
                 base.OnDrag(eventData);//اسکرول پنل
+
+            IsDragging = true;
         }
         public override void OnEndDrag(PointerEventData eventData)
         {
-
             if (routeToParent)
             {
                 parentScroll.OnEndDrag(eventData);//اسکرول اصلی

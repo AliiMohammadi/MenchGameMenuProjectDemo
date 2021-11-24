@@ -13,7 +13,7 @@ namespace Menu
         public enum GameWindwos
         {
             Main,Setting,Profile,Chats,LeaderBoard,OfflineLobby,OnlineLobby 
-             ,CashShop,DiecShop,LogoShop
+             ,CashShop,DiecShop,LogoShop,DailyQuests
         }
         /// <summary>
         /// پنجره درحال تمرکز 

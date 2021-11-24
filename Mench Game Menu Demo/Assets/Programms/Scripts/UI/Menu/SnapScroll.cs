@@ -21,6 +21,7 @@ namespace Menu
         /// سرعت حرکت جا به جایی بین صفحه ها
         /// </summary>
         public float ScrollSpeed = 10;//سرعت جا به جایی صفحه ها
+        public uint TargetContentIndex;
         /// <summary>
         /// فاصله هر محتوا نسبت به هم
         /// </summary>
@@ -33,13 +34,9 @@ namespace Menu
         /// </summary>
         bool isDragging;
         uint ContentsSize;
-        public uint TargetContentIndex;
 
         float[] ContentDistancs;
         float DistancebetweenToContents;
-        float NextContentDistancebePercent;
-        float MinSize = 0.5f;
-        float BigSize = 1f;
 
         void OnEnable()
         {
@@ -47,10 +44,9 @@ namespace Menu
         }
         void Update()
         {
-            getContentsDistanc();
-
             if (IsDragging())
             {
+                getContentsDistanc();
                 GetTargetIndext();
             }
             else
@@ -59,10 +55,6 @@ namespace Menu
             }
         }
 
-        bool IsDragging()
-        {
-            return Scrollrect.IsDragging;
-        }
         void GetContent()
         {
             for (int i = 0; i < ContentsSize; i++)
@@ -98,29 +90,11 @@ namespace Menu
                 }
             }
         }
-
-        /// <summary>
-        /// عدد میگیرد و به درصد تبدیل میکند.
-        /// </summary>
-        /// <param name="value">عدد بزرگ</param>
-        /// <param name="Percent">عدد کوچک</param>
-        /// <returns></returns>
-        float PercentOf(float value, float Percent)
-        {
-            float x = (Percent / value) * 100;
-            return x;
-        }
-        float ToPercent(float value, float Percent)
-        {
-            float x = (Percent / 100) * value;
-            return x;
-        }
-
         /// <summary>
         /// به پنلی با یک اندیس حرکت میکند و اسکرول میشود
         /// </summary>
         /// <param name="Index">اندیس پنل</param>
-        public void MoveToContent(uint Index)
+        void MoveToContent(uint Index)
         {
             if (Index+1 <= ContentDistancs.Length)
             {
@@ -136,6 +110,16 @@ namespace Menu
                     List.anchoredPosition = TargetPos;
                 }
             }
+        }
+
+        bool IsDragging()
+        {
+            return Scrollrect.IsDragging ;
+        }
+
+        public void SetTargetContent(uint index)
+        {
+            TargetContentIndex = index;
         }
         public void Refresh()
         {

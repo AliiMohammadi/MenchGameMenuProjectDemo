@@ -28,6 +28,8 @@ namespace Menu
         private GameObject OfflineLobbyPanel;
         [SerializeField]
         private GameObject ProfilePanel;
+        [SerializeField]
+        private GameObject DailyQuestsPanel;
 
         [SerializeField]
         private GameObject ShopCashPanel;
@@ -63,10 +65,10 @@ namespace Menu
             OnlineLobbyPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
-            LeaderBoardPanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
             MainPanel.SetActive(true);
 
-            Snapscroll.MoveToContent(1);
+            Snapscroll.SetTargetContent(1);
 
             ChangeWindowState(GameMenu.GameWindwos.Main);
         }
@@ -81,9 +83,9 @@ namespace Menu
             ChatsPanel.SetActive(true);
             OnlineLobbyPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
             ProfilePanel.SetActive(false);
             MainPanel.SetActive(false);
-            LeaderBoardPanel.SetActive(false);
             ChangeWindowState(GameMenu.GameWindwos.Chats);
         }
         public void ShowProfilePanel()
@@ -92,9 +94,9 @@ namespace Menu
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
             MainPanel.SetActive(false);
             ProfilePanel.SetActive(true);
-            LeaderBoardPanel.SetActive(false);
             ChangeWindowState(GameMenu.GameWindwos.Profile);
         }
         public void ShowOfflineLobbyPanel()
@@ -107,77 +109,83 @@ namespace Menu
             OfflineLobbyPanel.SetActive(true);
             ChangeWindowState(GameMenu.GameWindwos.OnlineLobby);
         }
+        public void ShowDailyQuestsPanel()
+        {
+            DailyQuestsPanel.SetActive(true);
+            ChangeWindowState(GameMenu.GameWindwos.DailyQuests);
+        }
 
         // پنجره های مربوط به بخش فروشگاه
         public void ShowShopPanel()
         {
-            Snapscroll.MoveToContent(0);
+            Snapscroll.SetTargetContent(0);
 
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
-
-            LeaderBoardPanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
 
             ChangeWindowState(GameMenu.GameWindwos.CashShop);
         }
 
         public void ShowCashPanel()
         {
-            Snapscroll.MoveToContent(0);
+            Snapscroll.SetTargetContent(0);
 
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
 
             ShopCashPanel.SetActive(true);
             ShopDicePanel.SetActive(false);
             ShopLogoPanel.SetActive(false);
-            LeaderBoardPanel.SetActive(false);
 
             ChangeWindowState(GameMenu.GameWindwos.CashShop);
         }
         public void ShowDicePanel()
         {
-            Snapscroll.MoveToContent(0);
+            Snapscroll.SetTargetContent(0);
 
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
 
             ShopCashPanel.SetActive(false);
             ShopDicePanel.SetActive(true);
             ShopLogoPanel.SetActive(false);
-            LeaderBoardPanel.SetActive(false);
+
             ChangeWindowState(GameMenu.GameWindwos.DiecShop);
         }
         public void ShowLogoPanel()
         {
-            Snapscroll.MoveToContent(0);
+            Snapscroll.SetTargetContent(0);
 
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
             OnlineLobbyPanel.SetActive(false);
             OfflineLobbyPanel.SetActive(false);
             ProfilePanel.SetActive(false);
+            DailyQuestsPanel.SetActive(false);
 
             ShopCashPanel.SetActive(false);
             ShopDicePanel.SetActive(false);
             ShopLogoPanel.SetActive(true);
-            LeaderBoardPanel.SetActive(false);
+
             ChangeWindowState(GameMenu.GameWindwos.LogoShop);
         }
 
         //پنجره های مربوط به لیدر برد
         public void ShowLeaderBoardPanel()
         {
-            Snapscroll.MoveToContent(2);
+            Snapscroll.SetTargetContent(2);
 
             SettingPanel.SetActive(false);
             ChatsPanel.SetActive(false);
@@ -187,7 +195,7 @@ namespace Menu
 
             ShopCashPanel.SetActive(false);
             ShopDicePanel.SetActive(false);
-            ShopLogoPanel.SetActive(true);
+            ShopLogoPanel.SetActive(false);
             LeaderBoardPanel.SetActive(true);
 
             ChangeWindowState(GameMenu.GameWindwos.LeaderBoard);
